@@ -12,7 +12,8 @@ resource "aws_vpc" "aws_vpc" {
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
-    Name = "vpc_${var.name}"
+    Name      = "vpc_${var.name}"
+    yor_trace = "0d5f6499-6aee-4499-a214-c918c8457808"
   }
 }
 
@@ -31,7 +32,8 @@ resource "aws_subnet" "public_subnets" {
   cidr_block              = cidrsubnet(aws_vpc.aws_vpc.cidr_block, 7, count.index + 1)
   map_public_ip_on_launch = true
   tags = {
-    Name = "public_subnet_${count.index}_${var.name}"
+    Name      = "public_subnet_${count.index}_${var.name}"
+    yor_trace = "bb9ea046-d927-4a78-83b8-28596b0a4f38"
   }
 }
 
@@ -42,7 +44,8 @@ resource "aws_subnet" "private_subnets_client" {
   vpc_id            = aws_vpc.aws_vpc.id
   cidr_block        = cidrsubnet(aws_vpc.aws_vpc.cidr_block, 7, count.index + 3)
   tags = {
-    Name = "private_subnet_client_${count.index}_${var.name}"
+    Name      = "private_subnet_client_${count.index}_${var.name}"
+    yor_trace = "76a26b55-e9a0-4e18-86c1-7dbf867dc144"
   }
 }
 
@@ -52,7 +55,8 @@ resource "aws_subnet" "private_subnets_server" {
   vpc_id            = aws_vpc.aws_vpc.id
   cidr_block        = cidrsubnet(aws_vpc.aws_vpc.cidr_block, 7, count.index + 5)
   tags = {
-    Name = "private_subnet_server_${count.index}_${var.name}"
+    Name      = "private_subnet_server_${count.index}_${var.name}"
+    yor_trace = "f385a48c-d176-444d-b8f6-5574ca139d1a"
   }
 }
 
@@ -60,7 +64,8 @@ resource "aws_subnet" "private_subnets_server" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.aws_vpc.id
   tags = {
-    Name = "igw_${var.name}"
+    Name      = "igw_${var.name}"
+    yor_trace = "86ea4d49-7708-42c0-932b-fb93e15a7233"
   }
 }
 
@@ -75,7 +80,8 @@ resource "aws_default_route_table" "rt_public" {
   }
 
   tags = {
-    Name = "public_rt_${var.name}"
+    Name      = "public_rt_${var.name}"
+    yor_trace = "f137ae03-f4e1-436c-b3c5-e1a61c393074"
   }
 }
 
@@ -83,7 +89,8 @@ resource "aws_default_route_table" "rt_public" {
 resource "aws_eip" "eip" {
   vpc = true
   tags = {
-    Name = "eip-${var.name}"
+    Name      = "eip-${var.name}"
+    yor_trace = "a4750025-6590-4efa-bfcf-0a9d97a6385d"
   }
 }
 
@@ -92,7 +99,8 @@ resource "aws_nat_gateway" "natgw" {
   allocation_id = aws_eip.eip.id
   subnet_id     = aws_subnet.public_subnets[0].id
   tags = {
-    Name = "nat_${var.name}"
+    Name      = "nat_${var.name}"
+    yor_trace = "5a5dd6be-757d-487c-8506-0f5ab128d1d4"
   }
 }
 
@@ -107,7 +115,8 @@ resource "aws_route_table" "rt_private" {
   }
 
   tags = {
-    Name = "private_rt_${var.name}"
+    Name      = "private_rt_${var.name}"
+    yor_trace = "12826a58-767d-4b63-aa70-224a29b12be4"
   }
 }
 

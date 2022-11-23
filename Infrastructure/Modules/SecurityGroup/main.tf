@@ -25,6 +25,7 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = var.name
+    Name      = var.name
+    yor_trace = "4b82f612-61c4-4599-a191-3e0250542490"
   }
 }

@@ -79,6 +79,16 @@ resource "aws_cloudwatch_metric_alarm" "high-memory-policy-alarm" {
     "ClusterName" = var.cluster_name
   }
 
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/ECS/Autoscaling/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "131644ea-e00f-48c1-8dfa-ed20cd6f8fe6"
+  }
 }
 
 # ------- High CPU alarm -------
@@ -98,4 +108,14 @@ resource "aws_cloudwatch_metric_alarm" "high-cpu-policy-alarm" {
     "ClusterName" = var.cluster_name
   }
 
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/ECS/Autoscaling/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "0a7d298e-96e2-4761-984f-f9679de18dff"
+  }
 }

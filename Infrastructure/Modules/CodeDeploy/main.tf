@@ -9,6 +9,16 @@
 resource "aws_codedeploy_app" "main" {
   compute_platform = "ECS"
   name             = var.name
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/CodeDeploy/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "8757eac9-9a12-4af3-b142-569c7c5d5059"
+  }
 }
 
 # ------- AWS CodeDeploy Group for each CodeDeploy App created -------
@@ -74,5 +84,15 @@ resource "aws_codedeploy_deployment_group" "main" {
 
   lifecycle {
     ignore_changes = [blue_green_deployment_config]
+  }
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/CodeDeploy/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "463a0264-f4cb-4908-8a1b-54883eec9fb9"
   }
 }

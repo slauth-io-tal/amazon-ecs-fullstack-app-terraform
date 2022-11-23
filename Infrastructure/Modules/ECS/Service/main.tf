@@ -33,4 +33,14 @@ resource "aws_ecs_service" "ecs_service" {
     ignore_changes = [desired_count, task_definition, load_balancer]
   }
 
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/ECS/Service/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "093bc8bb-1884-4a9b-bb7a-2fa9bae07374"
+  }
 }

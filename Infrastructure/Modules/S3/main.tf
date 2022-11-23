@@ -10,6 +10,7 @@ resource "aws_s3_bucket" "s3_bucket" {
   acl           = "private"
   force_destroy = true
   tags = {
-    Name = var.bucket_name
+    Name      = var.bucket_name
+    yor_trace = "876005d0-93d9-4ca1-b7d4-5ebaa9f9f8a7"
   }
 }

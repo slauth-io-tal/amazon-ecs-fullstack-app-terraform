@@ -93,4 +93,14 @@ resource "aws_codebuild_project" "aws_codebuild" {
     type      = "CODEPIPELINE"
     buildspec = var.buildspec_path
   }
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/CodeBuild/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "8509272f-2350-493a-ab13-4aa7055c0b6d"
+  }
 }

@@ -31,7 +31,14 @@ resource "aws_cloudtrail" "slauth_events" {
     }
   }
   tags = {
-    yor_trace = "cb9bd6eb-45ac-4692-ab9c-33b978f04c50"
+    yor_trace            = "cb9bd6eb-45ac-4692-ab9c-33b978f04c50"
+    git_commit           = "4a510ec425490f8f9f7fde11eb5e1ea28e7d6376"
+    git_file             = "Infrastructure/Modules/CloudTrail/main.tf"
+    git_last_modified_at = "2022-11-23 19:38:01"
+    git_last_modified_by = "tal@slauth.io"
+    git_modifiers        = "tal"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
   }
 }
 
@@ -39,7 +46,14 @@ resource "aws_s3_bucket" "slauth_event_logs" {
   bucket        = var.event_logs_bucket_name
   force_destroy = true
   tags = {
-    yor_trace = "49eb491e-fddb-4b1f-ac92-111f8e582662"
+    yor_trace            = "49eb491e-fddb-4b1f-ac92-111f8e582662"
+    git_commit           = "4a510ec425490f8f9f7fde11eb5e1ea28e7d6376"
+    git_file             = "Infrastructure/Modules/CloudTrail/main.tf"
+    git_last_modified_at = "2022-11-23 19:38:01"
+    git_last_modified_by = "tal@slauth.io"
+    git_modifiers        = "tal"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
   }
 }
 

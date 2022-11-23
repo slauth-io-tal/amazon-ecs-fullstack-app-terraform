@@ -25,7 +25,8 @@ resource "aws_iam_role" "ecs_task_excecution_role" {
 }
 EOF
   tags = {
-    Name = var.name
+    Name      = var.name
+    yor_trace = "685e270c-d27b-42e9-bd7f-a75ccabf0308"
   }
 
   lifecycle {
@@ -52,7 +53,8 @@ resource "aws_iam_role" "ecs_task_role" {
 }
 EOF
   tags = {
-    Name = var.name_ecs_task_role
+    Name      = var.name_ecs_task_role
+    yor_trace = "a86c216f-4fdc-4661-9cfa-a7e9bb59d0fb"
   }
 
   lifecycle {
@@ -83,7 +85,8 @@ resource "aws_iam_role" "devops_role" {
 }
 EOF
   tags = {
-    Name = var.name
+    Name      = var.name
+    yor_trace = "263dd440-3f39-4f7e-9b13-00141823ed32"
   }
   lifecycle {
     create_before_destroy = true
@@ -109,6 +112,16 @@ resource "aws_iam_role" "codedeploy_role" {
 }
 EOF
 
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/IAM/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "4e7e9b1c-00f9-4af1-a34f-998b1f847aa5"
+  }
 }
 
 # ------- IAM Policies -------
@@ -121,6 +134,16 @@ resource "aws_iam_policy" "policy_for_role" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/IAM/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "d0b8a88c-e980-453f-b413-8235990e594f"
+  }
 }
 
 resource "aws_iam_policy" "policy_for_ecs_task_role" {
@@ -131,6 +154,16 @@ resource "aws_iam_policy" "policy_for_ecs_task_role" {
 
   lifecycle {
     create_before_destroy = true
+  }
+  tags = {
+    git_commit           = "dcb66fd491dac167d82574497ed2bcb2569e104f"
+    git_file             = "Infrastructure/Modules/IAM/main.tf"
+    git_last_modified_at = "2021-05-18 09:39:26"
+    git_last_modified_by = "burkhardtmarina@gmail.com"
+    git_modifiers        = "burkhardtmarina"
+    git_org              = "slauth-io-tal"
+    git_repo             = "amazon-ecs-fullstack-app-terraform"
+    yor_trace            = "f6971859-40c5-4b46-abd2-2dcd408f5564"
   }
 }
 
