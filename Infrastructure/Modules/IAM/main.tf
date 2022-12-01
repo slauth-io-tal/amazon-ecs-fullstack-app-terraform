@@ -338,9 +338,33 @@ data "aws_iam_policy_document" "role_policy_devops_role" {
 
 data "aws_iam_policy_document" "role_policy_ecs_task_role" {
   statement {
-    sid    = "AllowEverything"
+    sid    = "AllowS3Actions"
     effect = "Allow"
-    actions = ["*"]
+    actions = [
+      "s3:GetObject",
+      "s3:ListBucket"
+    ]
+    resources = var.s3_bucket_assets
+  }
+  statement {
+    sid    = "AllowIAMPassRole"
+    effect = "Allow"
+    actions = [
+      "iam:PassRole"
+    ]
     resources = ["*"]
+  }
+  statement {
+    sid    = "AllowDynamodbActions"
+    effect = "Allow"
+    actions = [
+      "dynamodb:BatchGetItem",
+      "dynamodb:Describe*",
+      "dynamodb:List*",
+      "dynamodb:GetItem",
+      "dynamodb:Query",
+      "dynamodb:Scan",
+    ]
+    resources = var.dynamodb_table
   }
 }
